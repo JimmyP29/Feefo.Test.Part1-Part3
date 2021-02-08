@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FeefoTechnical.models;
+using System;
 
 namespace FeefoTechnical
 {
@@ -6,7 +7,10 @@ namespace FeefoTechnical
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            
+            var nor = new Normaliser();
+            var result = nor.Normalise("Chief architect");
+            Console.WriteLine(result);
         }
     }
 }
