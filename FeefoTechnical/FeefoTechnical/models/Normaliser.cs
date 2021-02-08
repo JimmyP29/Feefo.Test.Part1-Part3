@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace FeefoTechnical.models
 {
@@ -21,10 +19,9 @@ namespace FeefoTechnical.models
         public string Normalise(string jobTitle)
         {
             var quality = 0;
-          //  var accumulator = 0;
             var highScore = 0;
-            var jCharacter = "";
-            var jtCharacter = "";
+            var jCharPreviousMatch = "";
+            var jtCharPreviousMatch = "";
             var result = "";
             var lastCharMatched = false;
 
@@ -38,78 +35,35 @@ namespace FeefoTechnical.models
                         {
                             quality++;
 
-                            if (!(jCharacter == "" && jtCharacter == ""))
-                                if (jCharacter.ToLower() == jtCharacter.ToLower())
+                            if (!(jCharPreviousMatch == "" && jtCharPreviousMatch == ""))
+                                if (jCharPreviousMatch == jtCharPreviousMatch)
                                 {
                                     quality++;
                                     lastCharMatched = true;
                                 }
                                 else 
-                                {
                                     lastCharMatched = false;
-                                }
-                                    
-                          
-                            jCharacter = j.ToString();
-                            jtCharacter = jt.ToString();
-                            
-
-                            //if (quality > accumulator)
-                            //    accumulator = quality;
-
-                            //if (accumulator > highScore)
-                            //    highScore = accumulator;
+                                
+                            jCharPreviousMatch = j.ToString().ToLower();
+                            jtCharPreviousMatch = jt.ToString();
                         }
 
                         if (!lastCharMatched)
                         {
-                            jtCharacter = "";
-                            jCharacter = "";
+                            jCharPreviousMatch = "";
+                            jtCharPreviousMatch = "";
                         }
-                        
-                        // jtCharacter = "";
                     }
-                    //jCharacter = "";
                 }
-
-               
-                //accumulator = 0;
 
                 if (quality > highScore)
                 {
                     result = job;
                     highScore = quality;
                 }
-                    
 
                 quality = 0;
             }
-            //foreach (var job in _normalisedJobTitles)
-            //{
-            //    for (int i = 0; i < job.Length - 1; i++)
-            //    {
-            //        for (int k = 0; k < jobTitle.Length; k++)
-            //        {
-            //            if (jobTitle[k] == job[i])
-            //            {
-            //               // character = job[i].ToString();
-            //                quality++;
-
-            //                if (quality > highScore)
-            //                    highScore = quality;
-
-            //            }
-            //            continue;
-            //        }
-            //    }
-
-            //    if (highScore > 0)
-            //        result = job;
-
-            //    quality = 0;
-            //}
-
-
 
             return result;
         }
