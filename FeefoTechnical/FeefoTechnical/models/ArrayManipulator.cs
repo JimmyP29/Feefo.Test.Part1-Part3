@@ -52,7 +52,8 @@ namespace FeefoTechnical.models
         }
         private int FindRange(int[] values)
         {
-            return 0;
+            var orderedValues = SortArray(values);
+            return orderedValues[orderedValues.Length - 1] - orderedValues[0];
         }
 
         private int[] SortArray(int[] values)
