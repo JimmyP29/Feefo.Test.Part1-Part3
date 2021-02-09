@@ -48,7 +48,29 @@ namespace FeefoTechnical.models
         }
         private int FindMode(int[] values)
         {
-            return 0;
+            var counter = new Dictionary<int, int>();
+
+            for (int i = 0; i < values.Length; i++)
+            {
+                if(counter.ContainsKey(values[i]))
+                    counter[values[i]]++;
+                else
+                    counter.Add(values[i], 1);
+            }
+
+            var mode = 0;
+            var j = 0;
+
+            foreach (var count in counter)
+            {
+                if (count.Value > j)
+                {
+                    mode = count.Key;
+                    j = count.Value;
+                }
+            }
+
+            return mode;
         }
         private int FindRange(int[] values)
         {
