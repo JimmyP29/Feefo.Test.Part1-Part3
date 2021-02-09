@@ -6,23 +6,33 @@ namespace FeefoTechnical.models
 {
     public class ArrayManipulator
     {
-        private Random _random;
-
-        public ArrayManipulator()
+        public void GetStats(int[] values)
         {
-            _random = new Random();
+            var stats = new ArrayManipulatorStats(
+                FindMedian(values),
+                FindMean(values),
+                FindMode(values),
+                FindRange(values));
+
+            Console.WriteLine("--- Problem 2 ---");
+            Console.WriteLine(stats.Print());
         }
-        public int[] GenerateHugeArray()
+
+        private int FindMedian(int[] values)
         {
-            var result = new int[10];
-
-            for (int i = 0; i < 10; i++)
-            {
-                var number = _random.Next(100);
-                result[i] = number;
-            }
-
-            return result;   
+            return 0;
+        }
+        private int FindMean(int[] values)
+        {
+            return 0;
+        }
+        private int FindMode(int[] values)
+        {
+            return 0;
+        }
+        private int FindRange(int[] values)
+        {
+            return 0;
         }
     }
 }
