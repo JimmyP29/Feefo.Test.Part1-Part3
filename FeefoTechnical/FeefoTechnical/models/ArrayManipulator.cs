@@ -21,7 +21,20 @@ namespace FeefoTechnical.models
         private int FindMedian(int[] values)
         {
             var orderedValues = SortArray(values);
-            return orderedValues[orderedValues.Length / 2];
+            var length = orderedValues.Length;
+            var middleElement = orderedValues[length / 2];
+
+            if (length % 2 == 0)
+            {
+                // Even amount of values so the 2 middle ones are averaged.
+                var middleElementMinusOne = orderedValues[length / 2 - 1];
+                return (middleElementMinusOne + middleElement) / 2;
+            }
+            else
+            {
+                // Odd
+                return middleElement;
+            }
         }
         private int FindMean(int[] values)
         {
