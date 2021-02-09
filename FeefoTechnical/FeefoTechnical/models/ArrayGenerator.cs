@@ -10,13 +10,13 @@ namespace FeefoTechnical.models
         {
             _random = new Random();
         }
-        public int[] GenerateHugeArray()
+        public int[] GenerateHugeArray(int size)
         {
-            var result = new int[10];
+            var result = new int[size];
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < size; i++)
             {
-                var number = _random.Next(100);
+                var number = _random.Next(size);
                 result[i] = number;
             }
 

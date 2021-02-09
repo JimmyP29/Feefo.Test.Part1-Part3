@@ -30,7 +30,7 @@ namespace FeefoTechnical
 
             /* --- Problem 2 --- */
             var arrayGenerator = new ArrayGenerator();
-            var array = arrayGenerator.GenerateHugeArray();
+            var array = arrayGenerator.GenerateHugeArray(1000);
             var arrayManipulator = new ArrayManipulator();
             arrayManipulator.GetStats(array);
 
