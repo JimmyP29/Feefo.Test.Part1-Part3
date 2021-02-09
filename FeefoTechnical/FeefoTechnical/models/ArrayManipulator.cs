@@ -24,7 +24,13 @@ namespace FeefoTechnical.models
         }
         private int FindMean(int[] values)
         {
-            return 0;
+            var length = values.Length;
+            var count = 0;
+
+            for (int i = 0; i < length; i++)
+                count += values[i];
+
+            return count / length;
         }
         private int FindMode(int[] values)
         {
