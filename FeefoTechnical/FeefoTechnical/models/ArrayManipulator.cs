@@ -20,7 +20,8 @@ namespace FeefoTechnical.models
 
         private int FindMedian(int[] values)
         {
-            return 0;
+            var orderedValues = SortArray(values);
+            return orderedValues[orderedValues.Length / 2];
         }
         private int FindMean(int[] values)
         {
@@ -39,6 +40,26 @@ namespace FeefoTechnical.models
         private int FindRange(int[] values)
         {
             return 0;
+        }
+
+        private int[] SortArray(int[] values)
+        {
+            var length = values.Length;
+
+            for (int i = 0; i < length - 1; i++)
+            {
+                for (int j = i + 1; j < length; j++)
+                {
+                    if (values[i] > values[j])
+                    {
+                        var temporaryValue = values[i];
+                        values[i] = values[j];
+                        values[j] = temporaryValue;
+                    }
+                }
+            }
+
+            return values;
         }
     }
 }
