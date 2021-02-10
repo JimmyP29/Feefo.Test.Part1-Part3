@@ -31,7 +31,10 @@ namespace FeefoTechnical.models
                 {
                     foreach (char jt in jobTitle)
                     {
-                        if (j.ToString().ToLower() == jt.ToString().ToLower())
+                        var jLower = j.ToString().ToLower();
+                        var jtLower = jt.ToString().ToLower();
+
+                        if (jLower == jtLower)
                         {
                             quality++;
 
@@ -44,8 +47,8 @@ namespace FeefoTechnical.models
                                 else 
                                     lastCharMatched = false;
                                 
-                            jCharPreviousMatch = j.ToString().ToLower();
-                            jtCharPreviousMatch = jt.ToString();
+                            jCharPreviousMatch = jLower;
+                            jtCharPreviousMatch = jtLower;
                         }
 
                         if (!lastCharMatched)
