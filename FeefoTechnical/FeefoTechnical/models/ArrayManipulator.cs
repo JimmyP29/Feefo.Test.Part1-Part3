@@ -17,7 +17,7 @@ namespace FeefoTechnical.models
             Console.WriteLine(stats.Print());
         }
 
-        private int FindMedian(int[] values)
+        public int FindMedian(int[] values)
         {
             var orderedValues = SortArray(values);
             var length = orderedValues.Length;
@@ -35,7 +35,7 @@ namespace FeefoTechnical.models
                 return middleElement;
             }
         }
-        private int FindMean(int[] values)
+        public int FindMean(int[] values)
         {
             var length = values.Length;
             var count = 0;
@@ -45,7 +45,7 @@ namespace FeefoTechnical.models
 
             return count / length;
         }
-        private int FindMode(int[] values)
+        public int FindMode(int[] values)
         {
             var counter = new Dictionary<int, int>();
 
@@ -71,7 +71,7 @@ namespace FeefoTechnical.models
 
             return mode;
         }
-        private int FindRange(int[] values)
+        public int FindRange(int[] values)
         {
             var orderedValues = SortArray(values);
             return orderedValues[orderedValues.Length - 1] - orderedValues[0];
