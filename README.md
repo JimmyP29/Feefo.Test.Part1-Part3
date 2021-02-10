@@ -2,8 +2,9 @@
 
 In line with the requirements, I have provided implementations for both **Problem 1** and **Problem 2** as well as full Unit testing for both solutions. The code has been written in a way that closely resembles the Java examples in the requirements as that is what was asked for, I have added a few small embellishments to aid clarity and readability.
 
-![Problem 1](./problem1.PNG?raw=true)
-![Problem 2](./problem2.png?raw=true)
+![Problem 1](problem1.PNG?raw=true)
+
+![Problem 2](problem2.png?raw=true)
 
 **PLEASE NOTE**
 
